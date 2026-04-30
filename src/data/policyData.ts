@@ -1,6 +1,6 @@
 // policyData.ts — Mock data (stands in for database queries)
 
-import { RawPolicy } from "./types";
+import { RawPolicy } from "../types";
 
 export const agents: Record<string, { name: string }> = {
   "AGT-1001": { name: "Margaret Chen" },

@@ -1,7 +1,7 @@
 // PolicyTable.tsx — React component for the Agent Book of Business page
 
 import React from "react";
-import { BookOfBusiness } from "./types";
+import { BookOfBusiness } from "../types";
 
 interface PolicyTableProps {
   data: BookOfBusiness;
@@ -57,6 +57,16 @@ export const PolicyTable: React.FC<PolicyTableProps> = ({ data }) => {
           </tr>
         </thead>
         <tbody>
+          {visiblePolicies.length === 0 && (
+            <tr>
+              <td
+                colSpan={5}
+                style={{ padding: "24px 12px", textAlign: "center", color: "#94a3b8" }}
+              >
+                No active or pending policies found for this agent.
+              </td>
+            </tr>
+          )}
           {visiblePolicies.map((policy) => (
             <tr
               key={policy.policyNumber}

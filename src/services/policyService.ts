@@ -1,7 +1,7 @@
 // policyService.ts — Backend service that prepares the Book of Business API response
 
-import { RawPolicy, PolicySummary, BookOfBusiness } from "./types";
-import { agents, policies } from "./policyData";
+import { RawPolicy, PolicySummary, BookOfBusiness } from "../types";
+import { agents, policies } from "../data/policyData";
 
 /**
  * Converts a premium to its annual equivalent.
