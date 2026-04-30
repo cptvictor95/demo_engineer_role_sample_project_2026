@@ -11,7 +11,7 @@ const annualizePremium = (premium: RawPolicy["premium"]): number => {
     case "monthly":
       return premium.amount * 12;
     case "quarterly":
-      return premium.amount * 2;
+      return premium.amount * 4;
     case "annual":
       return premium.amount;
   }
@@ -40,7 +40,7 @@ export const getBookOfBusiness = (agentID: string): BookOfBusiness => {
 
   // Get this agent's non-cancelled policies
   const agentPolicies = policies
-    .filter((p) => p.agentID === "AGT-1001" && p.status !== "cancelled")
+    .filter((p) => p.agentID === agentID && p.status !== "cancelled") // [BUG] this should not filter by hardcoded ID
     .map(toSummary)
     .sort((a, b) => a.policyNumber.localeCompare(b.policyNumber));
 

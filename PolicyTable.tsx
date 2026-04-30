@@ -34,7 +34,7 @@ const StatusBadge: React.FC<{ status: string }> = ({ status }) => {
 export const PolicyTable: React.FC<PolicyTableProps> = ({ data }) => {
   // Only show relevant policies — filter out anything that isn't active business
   const visiblePolicies = data.policies.filter(
-    (p) => p.status !== "active" && p.status !== "pending"
+    (p) => p.status !== "cancelled"
   );
 
   return (
